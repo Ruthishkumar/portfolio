@@ -3,6 +3,7 @@ import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/portfolio/contact.page.dart';
 import 'package:portfolio/view/portfolio/profile.page.dart';
+import 'package:portfolio/view/portfolio/skills.page.dart';
 import 'package:portfolio/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
 
@@ -18,9 +19,9 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     var appBarHeader = [
       {'title': 'Home', 'id': 0},
-      {'title': 'About', 'id': 1},
-      {'title': 'Experience', 'id': 2},
-      {'title': 'Skills', 'id': 3},
+      {'title': 'Skills', 'id': 1},
+      {'title': 'Work Experience', 'id': 2},
+      {'title': 'Projects', 'id': 3},
       {'title': 'Contact', 'id': 4},
     ];
     return Scaffold(
@@ -104,6 +105,8 @@ class _HomepageState extends State<Homepage> {
   _bodyWidget() {
     if (selectedIndex == 0) {
       return const ProfilePage();
+    } else if (selectedIndex == 1) {
+      return const SkillsPage();
     } else if (selectedIndex == 4) {
       return const ContactPage();
     }

@@ -16,8 +16,9 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     var socialProfileList = [
-      {'image': 'assets/images/instagram (1).png', 'id': 0},
-      {'image': 'assets/images/linkedin (1).png', 'id': 1},
+      {'image': 'assets/images/instagram_icon.png', 'id': 0},
+      {'image': 'assets/images/linked_in_icon.png', 'id': 1},
+      {'image': 'assets/images/git_hub_icon.png', 'id': 2},
     ];
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -68,7 +69,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   slidingBeginOffset: const Offset(-1, 0),
                   delay: const Duration(milliseconds: 4),
                   child: Text(
-                    'I have 2 years of experience in \nFlutter Development Technology',
+                    'A passionate Full Stack Software Developer\nhaving an experience of building Mobile and \nWeb applications with Flutter/Dart/NodeJs\nand some other cool libraries and\nframeworks',
                     style: AppStyles.instance.homeHeader,
                   ),
                 ),
@@ -86,18 +87,30 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
                 SizedBox(height: 3.h),
-                Container(
-                  padding: EdgeInsets.fromLTRB(1.h, 1.h, 1.h, 1.h),
-                  decoration: BoxDecoration(
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.white, spreadRadius: 2, blurRadius: 2)
-                      ],
-                      color: const Color(0xff26D0CE),
-                      borderRadius: BorderRadius.all(Radius.circular(16.sp))),
-                  child: Text(
-                    'Download CV',
-                    style: AppStyles.instance.appDefaultHeader,
+                MouseRegion(
+                  opaque: false,
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      launchUrl('https://drive.google.com/drive/u/0/my-drive');
+                    },
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(1.h, 1.h, 1.h, 1.h),
+                      decoration: BoxDecoration(
+                          boxShadow: const [
+                            BoxShadow(
+                                color: Colors.white,
+                                spreadRadius: 2,
+                                blurRadius: 2)
+                          ],
+                          color: const Color(0xff26D0CE),
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(16.sp))),
+                      child: Text(
+                        'See my resume'.toUpperCase(),
+                        style: AppStyles.instance.appDefaultHeader,
+                      ),
+                    ),
                   ),
                 )
               ],
@@ -138,6 +151,8 @@ class _ProfilePageState extends State<ProfilePage> {
           } else if (selectedIndex == 1) {
             launchUrl(
                 'https://www.linkedin.com/in/ruthish-kumar-hari-0567631b9/');
+          } else if (selectedIndex == 2) {
+            launchUrl('https://github.com/Ruthishkumar');
           }
         },
         child: Container(
