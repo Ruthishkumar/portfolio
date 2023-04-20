@@ -26,6 +26,30 @@ class AppStyles {
       fontStyle: FontStyle.normal,
       color: Colors.white);
 
+  final TextStyle? skillSHeader = GoogleFonts.heebo(
+      fontWeight: FontWeight.w300,
+      fontSize: 10.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.white);
+
+  final TextStyle? skillsSubHeader = GoogleFonts.poppins(
+      fontWeight: FontWeight.w400,
+      fontSize: 5.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.white);
+
+  final TextStyle? skillTech = GoogleFonts.poppins(
+      fontWeight: FontWeight.w400,
+      fontSize: 3.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.white);
+
+  final TextStyle? hover = GoogleFonts.poppins(
+      fontWeight: FontWeight.w400,
+      fontSize: 3.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.blue);
+
   final TextStyle? contactMeColor = GoogleFonts.heebo(
       fontWeight: FontWeight.w500,
       fontSize: 7.sp,

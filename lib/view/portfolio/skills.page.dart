@@ -13,45 +13,89 @@ class _SkillsPageState extends State<SkillsPage> {
   @override
   Widget build(BuildContext context) {
     var techStack = [
-      {'tech': 'assets/images/flutter_icon.png'},
-      {'tech': 'assets/images/dart_icon.png'},
-      {'tech': 'assets/images/firebase_icon.png'},
-      {'tech': 'assets/images/html.png'},
-      {'tech': 'assets/images/html.png'},
+      {
+        'tech': 'assets/images/flutter_icon.png',
+        'techTitle': 'Flutter',
+        'id': 0
+      },
+      {'tech': 'assets/images/dart_icon.png', 'techTitle': 'Dart', 'id': 1},
+      {
+        'tech': 'assets/images/firebase_icon.png',
+        'techTitle': 'Firebase',
+        'id': 2
+      },
+      {'tech': 'assets/images/html.png', 'techTitle': 'Html-5', 'id': 3},
+      {'tech': 'assets/images/css_icon.png', 'techTitle': 'Css-3', 'id': 4},
+      {'tech': 'assets/images/node_icon.png', 'techTitle': 'Node js', 'id': 5},
     ];
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-          width: 300,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        Row(
           children: [
-            Text('What I do', style: AppStyles.instance.portfolioHeader),
-            SizedBox(height: 3.h),
-            Row(
+            Container(
+              width: 300,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Wrap(
-                  spacing: 1.w,
-                  runSpacing: 1.w,
+                Text('What I do', style: AppStyles.instance.skillSHeader),
+                SizedBox(height: 1.h),
+                Text(
+                    'Crazy full stack developer who wants to explore\nevery tech stack'
+                        .toUpperCase(),
+                    style: AppStyles.instance.skillsSubHeader),
+                SizedBox(height: 2.h),
+                Row(
                   children: [
-                    for (int i = 0; i < techStack.length; i++)
-                      _techStackDetails(techStack[i])
+                    Wrap(
+                      spacing: 1.w,
+                      runSpacing: 1.w,
+                      children: [
+                        for (int i = 0; i < techStack.length; i++)
+                          _techStackDetails(techStack[i])
+                      ],
+                    )
                   ],
                 )
               ],
             )
           ],
-        )
+        ),
       ],
     );
   }
 
+  int selectedValue = -1;
+
   _techStackDetails(options) {
-    return Image.asset(
-      options['tech'],
-      height: 5.h,
-      color: Colors.white,
+    return MouseRegion(
+      onEnter: (details) {
+        setState(() {
+          selectedValue = options['id'];
+        });
+      },
+      onExit: (details) {
+        setState(() {
+          selectedValue = -1;
+        });
+      },
+      child: Column(
+        children: [
+          Image.asset(
+            options['tech'],
+            height: 6.h,
+            color: selectedValue == options['id'] ? Colors.blue : Colors.white,
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            options['techTitle'],
+            style: selectedValue == options['id']
+                ? AppStyles.instance.hover
+                : AppStyles.instance.skillTech,
+          )
+        ],
+      ),
     );
   }
 }
