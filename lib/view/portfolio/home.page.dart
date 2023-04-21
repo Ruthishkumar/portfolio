@@ -25,18 +25,20 @@ class _HomepageState extends State<Homepage> {
       {'title': 'Contact', 'id': 4},
     ];
     return Scaffold(
-      backgroundColor: const Color(0xff182848),
+      backgroundColor: const Color(0xff1E1E26),
       appBar: AppBar(
+          elevation: 0,
           centerTitle: false,
-          leadingWidth: 300,
-          backgroundColor: const Color(0xff061161),
+          leadingWidth: 250,
+          toolbarHeight: 100,
+          backgroundColor: const Color(0xff1E1E26),
           title: DelayedDisplay(
             slidingBeginOffset: const Offset(-1, 0),
             delay: const Duration(milliseconds: 2),
             child: Container(
               padding: EdgeInsets.fromLTRB(3.h, 0.h, 3.h, 0.h),
               child: Text(
-                'Portfolio',
+                '<Portfolio/>',
                 style: AppStyles.instance.portfolioHeader,
               ),
             ),
@@ -59,7 +61,7 @@ class _HomepageState extends State<Homepage> {
             )
           ]),
       body: Container(
-          padding: EdgeInsets.fromLTRB(20.h, 10.h, 20.h, 10.h),
+          padding: EdgeInsets.fromLTRB(20.h, 5.h, 20.h, 5.h),
           child: _bodyWidget()),
     );
   }

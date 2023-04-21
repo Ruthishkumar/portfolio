@@ -1,4 +1,6 @@
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:portfolio/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
 
@@ -28,38 +30,75 @@ class _SkillsPageState extends State<SkillsPage> {
       {'tech': 'assets/images/css_icon.png', 'techTitle': 'Css-3', 'id': 4},
       {'tech': 'assets/images/node_icon.png', 'techTitle': 'Node js', 'id': 5},
     ];
+
+    var skillsDetails = [
+      {
+        'title':
+            'Develop highly interactive front end/User Interface for your web\nand mobile applications'
+      },
+      {
+        'title':
+            'Integration of third party services such as Rest API/Firebase/\nGraphQl'
+      },
+    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              width: 300,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
               children: [
-                Text('What I do', style: AppStyles.instance.skillSHeader),
-                SizedBox(height: 1.h),
-                Text(
-                    'Crazy full stack developer who wants to explore\nevery tech stack'
-                        .toUpperCase(),
-                    style: AppStyles.instance.skillsSubHeader),
-                SizedBox(height: 2.h),
-                Row(
-                  children: [
-                    Wrap(
-                      spacing: 1.w,
-                      runSpacing: 1.w,
-                      children: [
-                        for (int i = 0; i < techStack.length; i++)
-                          _techStackDetails(techStack[i])
-                      ],
-                    )
-                  ],
+                DelayedDisplay(
+                  slidingBeginOffset: const Offset(-1, 0),
+                  delay: const Duration(milliseconds: 1),
+                  child: Lottie.asset(
+                    'assets/lottie/skills.json',
+                    height: 55.h,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                DelayedDisplay(
+                  slidingBeginOffset: const Offset(1, 0),
+                  delay: const Duration(milliseconds: 2),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('What I do', style: AppStyles.instance.skillSHeader),
+                      SizedBox(height: 1.h),
+                      Text(
+                          'Crazy full stack developer who wants to explore\nevery tech stack'
+                              .toUpperCase(),
+                          style: AppStyles.instance.skillsSubHeader),
+                      SizedBox(height: 2.h),
+                      Row(
+                        children: [
+                          Wrap(
+                            spacing: 1.w,
+                            runSpacing: 1.w,
+                            children: [
+                              for (int i = 0; i < techStack.length; i++)
+                                _techStackDetails(techStack[i])
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 3.h),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          for (int i = 0; i < skillsDetails.length; i++)
+                            skillsDescription(skillsDetails[i])
+                        ],
+                      ),
+                    ],
+                  ),
                 )
               ],
-            )
+            ),
           ],
         ),
       ],
@@ -68,6 +107,7 @@ class _SkillsPageState extends State<SkillsPage> {
 
   int selectedValue = -1;
 
+  /// skills stack with for loop
   _techStackDetails(options) {
     return MouseRegion(
       onEnter: (details) {
@@ -87,7 +127,7 @@ class _SkillsPageState extends State<SkillsPage> {
             height: 6.h,
             color: selectedValue == options['id'] ? Colors.blue : Colors.white,
           ),
-          SizedBox(height: 4.h),
+          SizedBox(height: 3.h),
           Text(
             options['techTitle'],
             style: selectedValue == options['id']
@@ -96,6 +136,29 @@ class _SkillsPageState extends State<SkillsPage> {
           )
         ],
       ),
+    );
+  }
+
+  skillsDescription(options) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            SizedBox(
+              height: 5.h,
+              child: Image.asset(
+                'assets/images/flash.png',
+              ),
+            ),
+            Text(
+              options['title'],
+              style: AppStyles.instance.skillDs,
+            )
+          ],
+        ),
+        SizedBox(height: 2.h),
+      ],
     );
   }
 }

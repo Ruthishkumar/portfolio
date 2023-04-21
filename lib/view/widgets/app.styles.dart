@@ -8,17 +8,17 @@ class AppStyles {
 
   static AppStyles get instance => _singleton;
 
-  final TextStyle? appDefaultHeader = GoogleFonts.heebo(
+  final TextStyle? appDefaultHeader = GoogleFonts.aBeeZee(
       fontWeight: FontWeight.w500,
-      fontSize: 3.sp,
+      fontSize: 4.sp,
       fontStyle: FontStyle.normal,
       color: Colors.white);
 
-  final TextStyle? appHoverHeader = GoogleFonts.heebo(
+  final TextStyle? appHoverHeader = GoogleFonts.aBeeZee(
       fontWeight: FontWeight.w500,
-      fontSize: 3.sp,
+      fontSize: 4.sp,
       fontStyle: FontStyle.normal,
-      color: const Color(0xff26D0CE));
+      color: const Color(0xff4ca1af));
 
   final TextStyle? portfolioHeader = GoogleFonts.heebo(
       fontWeight: FontWeight.w500,
@@ -40,15 +40,21 @@ class AppStyles {
 
   final TextStyle? skillTech = GoogleFonts.poppins(
       fontWeight: FontWeight.w400,
-      fontSize: 3.sp,
+      fontSize: 2.sp,
       fontStyle: FontStyle.normal,
       color: Colors.white);
 
   final TextStyle? hover = GoogleFonts.poppins(
       fontWeight: FontWeight.w400,
-      fontSize: 3.sp,
+      fontSize: 2.sp,
       fontStyle: FontStyle.normal,
-      color: Colors.blue);
+      color: const Color(0xff3498db));
+
+  final TextStyle? skillDs = GoogleFonts.poppins(
+      fontWeight: FontWeight.w400,
+      fontSize: 4.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.white);
 
   final TextStyle? contactMeColor = GoogleFonts.heebo(
       fontWeight: FontWeight.w500,
@@ -66,7 +72,7 @@ class AppStyles {
       fontWeight: FontWeight.w500,
       fontSize: 5.sp,
       fontStyle: FontStyle.normal,
-      color: const Color(0xff26D0CE));
+      color: const Color(0xff4ca1af));
 
   final TextStyle? nameHeader = GoogleFonts.poppins(
       fontWeight: FontWeight.w700,

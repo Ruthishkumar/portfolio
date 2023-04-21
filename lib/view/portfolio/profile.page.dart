@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:portfolio/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
@@ -21,10 +22,10 @@ class _ProfilePageState extends State<ProfilePage> {
       {'image': 'assets/images/git_hub_icon.png', 'id': 2},
     ];
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,7 +87,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     )
                   ],
                 ),
-                SizedBox(height: 3.h),
+                SizedBox(height: 4.h),
                 MouseRegion(
                   opaque: false,
                   cursor: SystemMouseCursors.click,
@@ -95,7 +96,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       launchUrl('https://drive.google.com/drive/u/0/my-drive');
                     },
                     child: Container(
-                      padding: EdgeInsets.fromLTRB(1.h, 1.h, 1.h, 1.h),
+                      padding: EdgeInsets.fromLTRB(2.h, 1.h, 2.h, 1.h),
                       decoration: BoxDecoration(
                           boxShadow: const [
                             BoxShadow(
@@ -115,7 +116,14 @@ class _ProfilePageState extends State<ProfilePage> {
                 )
               ],
             ),
-            Container()
+            DelayedDisplay(
+              slidingBeginOffset: const Offset(1, 0),
+              delay: const Duration(milliseconds: 2),
+              child: Lottie.asset(
+                'assets/lottie/hello.json',
+                height: 55.h,
+              ),
+            )
           ],
         )
       ],
