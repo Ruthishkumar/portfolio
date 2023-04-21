@@ -59,6 +59,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           repeatForever: true,
                           animatedTexts: [
                             TyperAnimatedText('Mobile Developer'),
+                            TyperAnimatedText('Flutter Developer'),
                           ],
                         ),
                       )

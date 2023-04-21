@@ -26,64 +26,23 @@ class _WorkExperienceState extends State<WorkExperience> {
                 designation: 'Mobile Developer',
                 workDate: 'May 2022 - Present',
                 jobDescription:
-                    'Developed a real time mobile applications using flutter,dart,firebase and Graphql API',
-                jobDescriptionTwo: '',
+                    'Developed a real time mobile applications using Flutter, Dart',
+                jobDescriptionTwo:
+                    'Integrate third party services as such GraphQl API, Firebase',
+                backGroundColor: Color(0xff43cea2),
               ),
               SizedBox(width: 4.w),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Container(
-                    width: 25.w,
-                    padding: EdgeInsets.fromLTRB(5.h, 5.h, 5.h, 5.h),
-                    decoration: BoxDecoration(
-                        color: const Color(0xff2c3e50),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(3.h),
-                            topRight: Radius.circular(3.h)),
-                        border: Border.all(color: Colors.white)),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Deepsense Digital Solutions',
-                          style: AppStyles.instance.appDefaultHeader,
-                        ),
-                        SizedBox(height: 1.h),
-                        Text(
-                          'Pvt. Ltd',
-                          style: AppStyles.instance.appDefaultHeader,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 25.w,
-                    padding: EdgeInsets.fromLTRB(5.h, 22.h, 5.h, 5.h),
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.all(Radius.circular(3.h)),
-                        border: Border.all(color: Colors.white)),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Mobile Developer',
-                          style: AppStyles.instance.appDefaultHeader,
-                        ),
-                        SizedBox(height: 1.h),
-                        Text(
-                          'May 2022 - Present',
-                          style: AppStyles.instance.appDefaultHeader,
-                        ),
-                        SizedBox(height: 3.h),
-                        Text(
-                          'Developed a real time mobile applications using flutter,dart,firebase and Graphql API',
-                          style: AppStyles.instance.appDefaultHeader,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              )
+              const ExperienceContainerCard(
+                companyHeaderOne: 'Central Apps',
+                companyHeaderTwo: '',
+                designation: 'Flutter Developer',
+                workDate: 'May 2021 - April 2022',
+                jobDescription:
+                    'Build time mobile applications using Flutter, Dart',
+                jobDescriptionTwo:
+                    'Integrate third party services as Rest API, Firebase',
+                backGroundColor: Color(0xffA83279),
+              ),
             ],
           ),
         ],

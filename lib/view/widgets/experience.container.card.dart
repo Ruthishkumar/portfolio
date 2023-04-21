@@ -9,6 +9,7 @@ class ExperienceContainerCard extends StatelessWidget {
   final String workDate;
   final String jobDescription;
   final String jobDescriptionTwo;
+  final Color backGroundColor;
   const ExperienceContainerCard(
       {Key? key,
       required this.companyHeaderOne,
@@ -16,7 +17,8 @@ class ExperienceContainerCard extends StatelessWidget {
       required this.designation,
       required this.workDate,
       required this.jobDescription,
-      required this.jobDescriptionTwo})
+      required this.jobDescriptionTwo,
+      required this.backGroundColor})
       : super(key: key);
 
   @override
@@ -28,7 +30,7 @@ class ExperienceContainerCard extends StatelessWidget {
           width: 25.w,
           padding: EdgeInsets.fromLTRB(5.h, 5.h, 5.h, 5.h),
           decoration: BoxDecoration(
-              color: const Color(0xff43cea2),
+              color: backGroundColor,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(3.h),
                   topRight: Radius.circular(3.h)),
