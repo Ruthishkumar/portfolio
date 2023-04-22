@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:portfolio/view/widgets/app.button.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:portfolio/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
@@ -89,32 +90,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
                 SizedBox(height: 4.h),
-                MouseRegion(
-                  opaque: false,
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: () {
-                      launchUrl('https://drive.google.com/drive/u/0/my-drive');
-                    },
-                    child: Container(
-                      padding: EdgeInsets.fromLTRB(2.h, 1.h, 2.h, 1.h),
-                      decoration: BoxDecoration(
-                          boxShadow: const [
-                            BoxShadow(
-                                color: Colors.white,
-                                spreadRadius: 2,
-                                blurRadius: 2)
-                          ],
-                          color: const Color(0xff26D0CE),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(16.sp))),
-                      child: Text(
-                        'See my resume'.toUpperCase(),
-                        style: AppStyles.instance.appDefaultHeader,
-                      ),
-                    ),
-                  ),
-                )
+                AppButton(
+                    onPressed: () {}, label: 'See my resume'.toUpperCase()),
               ],
             ),
             DelayedDisplay(

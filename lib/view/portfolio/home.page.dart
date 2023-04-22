@@ -71,7 +71,7 @@ class _HomepageState extends State<Homepage> {
 
   int selectedValue = 0;
 
-  int selectedIndex = 2;
+  int selectedIndex = 4;
 
   /// app bar widget
   _appBar(options) {
