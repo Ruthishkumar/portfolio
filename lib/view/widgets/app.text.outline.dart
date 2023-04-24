@@ -56,7 +56,7 @@ class AppTextOutline extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
                 borderSide:
-                    const BorderSide(color: Color(0xff89fffd), width: 1)),
+                    const BorderSide(color: Color(0xff136a8a), width: 1)),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
                 borderSide:

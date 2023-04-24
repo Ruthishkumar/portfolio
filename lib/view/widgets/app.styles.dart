@@ -18,7 +18,7 @@ class AppStyles {
       fontWeight: FontWeight.w500,
       fontSize: 4.sp,
       fontStyle: FontStyle.normal,
-      color: const Color(0xff4ca1af));
+      color: const Color(0xff136a8a));
 
   final TextStyle? portfolioHeader = GoogleFonts.heebo(
       fontWeight: FontWeight.w500,
@@ -60,7 +60,7 @@ class AppStyles {
       fontWeight: FontWeight.w500,
       fontSize: 7.sp,
       fontStyle: FontStyle.normal,
-      color: const Color(0xff26D0CE));
+      color: const Color(0xff136a8a));
 
   final TextStyle homeHeader = GoogleFonts.poppins(
       fontWeight: FontWeight.w500,
@@ -72,11 +72,35 @@ class AppStyles {
       fontWeight: FontWeight.w500,
       fontSize: 5.sp,
       fontStyle: FontStyle.normal,
-      color: const Color(0xff4ca1af));
+      color: const Color(0xff136a8a));
 
   final TextStyle? nameHeader = GoogleFonts.poppins(
       fontWeight: FontWeight.w700,
       fontSize: 8.sp,
       fontStyle: FontStyle.normal,
+      color: Colors.white);
+
+  final TextStyle? educationHeader = GoogleFonts.poppins(
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w300,
+      fontSize: 13.sp,
+      color: Colors.white);
+
+  final TextStyle? collegeName = GoogleFonts.poppins(
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w300,
+      fontSize: 6.sp,
+      color: Colors.white);
+
+  final TextStyle? projectHeader = GoogleFonts.poppins(
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w500,
+      fontSize: 4.sp,
+      color: Colors.white);
+
+  final TextStyle? projectDescription = GoogleFonts.poppins(
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w300,
+      fontSize: 3.sp,
       color: Colors.white);
 }

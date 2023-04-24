@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/view/portfolio/contact.page.dart';
 import 'package:portfolio/view/portfolio/experience.page.dart';
 import 'package:portfolio/view/portfolio/profile.page.dart';
+import 'package:portfolio/view/portfolio/project.page.dart';
 import 'package:portfolio/view/portfolio/skills.page.dart';
 import 'package:portfolio/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
@@ -71,7 +72,7 @@ class _HomepageState extends State<Homepage> {
 
   int selectedValue = 0;
 
-  int selectedIndex = 4;
+  int selectedIndex = 3;
 
   /// app bar widget
   _appBar(options) {
@@ -114,6 +115,8 @@ class _HomepageState extends State<Homepage> {
       return const SkillsPage();
     } else if (selectedIndex == 2) {
       return const WorkExperience();
+    } else if (selectedIndex == 3) {
+      return const ProjectPage();
     } else if (selectedIndex == 4) {
       return const ContactPage();
     }

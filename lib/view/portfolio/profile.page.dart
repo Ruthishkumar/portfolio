@@ -146,11 +146,11 @@ class _ProfilePageState extends State<ProfilePage> {
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: selectedValue == header['id']
-                    ? const Color(0xff26D0CE)
+                    ? const Color(0xff136a8a)
                     : selectedIndex == header['id']
-                        ? const Color(0xff26D0CE)
+                        ? const Color(0xff136a8a)
                         : Colors.white,
-                border: Border.all(color: const Color(0xff26D0CE))),
+                border: Border.all(color: const Color(0xff136a8a))),
             child: Image.asset(
               header['image'],
               height: 5.h,
