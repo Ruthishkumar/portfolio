@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/view/portfolio/home.page.dart';
+import 'package:portfolio/view/layout/responsive_layout.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/portfolio/desktop_home.page.dart';
+import 'package:portfolio/view/responsive_layout/mobile_view/view/portfolio/mobile_home.page.dart';
+import 'package:portfolio/view/responsive_layout/tablet_view/view/portfolio/tablet_home.page.dart';
 import 'package:sizer/sizer.dart';
 import 'package:toast/toast.dart';
 
@@ -18,7 +21,11 @@ class MyApp extends StatelessWidget {
           title: 'Portfolio',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(primarySwatch: Colors.blue),
-          home: const Homepage(),
+          home: const ResponsiveLayout(
+            mobileView: MobileHomepage(),
+            tabletView: TabletHomePage(),
+            desktopView: DesktopHomepage(),
+          ),
         );
       },
     );

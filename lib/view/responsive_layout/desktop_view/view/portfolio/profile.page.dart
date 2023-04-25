@@ -160,7 +160,7 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  /// redirect url with url
+  /// redirect url with social profile
   launchUrl(String url) async {
     if (await canLaunch(url)) {
       await launch(url);

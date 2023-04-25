@@ -1,24 +1,21 @@
-import 'dart:html';
-
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/view/portfolio/contact.page.dart';
-import 'package:portfolio/view/portfolio/experience.page.dart';
-import 'package:portfolio/view/portfolio/profile.page.dart';
-import 'package:portfolio/view/portfolio/project.page.dart';
-import 'package:portfolio/view/portfolio/skills.page.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/portfolio/contact.page.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/portfolio/experience.page.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/portfolio/profile.page.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/portfolio/project.page.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/portfolio/skills.page.dart';
 import 'package:portfolio/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
 
-class Homepage extends StatefulWidget {
-  const Homepage({Key? key}) : super(key: key);
+class DesktopHomepage extends StatefulWidget {
+  const DesktopHomepage({Key? key}) : super(key: key);
 
   @override
-  State<Homepage> createState() => _HomepageState();
+  State<DesktopHomepage> createState() => _DesktopHomepageState();
 }
 
-class _HomepageState extends State<Homepage> {
+class _DesktopHomepageState extends State<DesktopHomepage> {
   @override
   Widget build(BuildContext context) {
     var appBarHeader = [
@@ -72,7 +69,7 @@ class _HomepageState extends State<Homepage> {
 
   int selectedValue = 0;
 
-  int selectedIndex = 3;
+  int selectedIndex = 0;
 
   /// app bar widget
   _appBar(options) {
