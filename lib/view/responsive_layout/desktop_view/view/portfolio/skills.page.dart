@@ -1,7 +1,7 @@
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:portfolio/view/widgets/app.styles.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
 
 class SkillsPage extends StatefulWidget {
@@ -168,41 +168,45 @@ class _SkillsPageState extends State<SkillsPage> {
   }
 
   educationBackgroundWidget() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('Education', style: AppStyles.instance.educationHeader),
-        SizedBox(height: 4.sp),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              'assets/images/college_logo.png',
-              height: 16.h,
-            ),
-            SizedBox(width: 3.w),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'SRM Valliammai Engineering College',
-                  style: AppStyles.instance.collegeName,
-                ),
-                SizedBox(height: 3.sp),
-                Text(
-                  'BE - Electrical and Electronics Engineering',
-                  style: AppStyles.instance.skillsSubHeader,
-                ),
-                SizedBox(height: 3.sp),
-                Text(
-                  'August 2016 - November 2020',
-                  style: AppStyles.instance.skillsSubHeader,
-                ),
-              ],
-            )
-          ],
-        )
-      ],
+    return DelayedDisplay(
+      slidingBeginOffset: const Offset(0, 1),
+      delay: const Duration(milliseconds: 2),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Education', style: AppStyles.instance.educationHeader),
+          SizedBox(height: 4.sp),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                'assets/images/college_logo.png',
+                height: 16.h,
+              ),
+              SizedBox(width: 3.w),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'SRM Valliammai Engineering College',
+                    style: AppStyles.instance.collegeName,
+                  ),
+                  SizedBox(height: 3.sp),
+                  Text(
+                    'BE - Electrical and Electronics Engineering',
+                    style: AppStyles.instance.skillsSubHeader,
+                  ),
+                  SizedBox(height: 3.sp),
+                  Text(
+                    'August 2016 - November 2020',
+                    style: AppStyles.instance.skillsSubHeader,
+                  ),
+                ],
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }

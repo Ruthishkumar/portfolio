@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_app.styles.dart';
-import 'package:portfolio/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
 
 class MobileAppButton extends StatelessWidget {

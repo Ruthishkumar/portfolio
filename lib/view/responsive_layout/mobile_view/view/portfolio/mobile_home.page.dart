@@ -20,7 +20,7 @@ class MobileHomepage extends StatefulWidget {
 class _MobileHomepageState extends State<MobileHomepage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  int selectedValue = 3;
+  int selectedValue = 0;
 
   int selectedIndex = 0;
 
@@ -91,6 +91,7 @@ class _MobileHomepageState extends State<MobileHomepage> {
                         onTap: () {
                           log(newData[index]['id'].toString());
                           log('Selected Value');
+                          Navigator.of(context).pop();
                         },
                       );
                     })
@@ -120,7 +121,7 @@ class _MobileHomepageState extends State<MobileHomepage> {
   /// body widget
   _bodyWidget() {
     if (selectedIndex == 0) {
-      return const MobileContactPage();
+      return const MobileProfilePage();
     } else if (selectedIndex == 1) {
       return const MobileSkillsPage();
     } else if (selectedIndex == 2) {

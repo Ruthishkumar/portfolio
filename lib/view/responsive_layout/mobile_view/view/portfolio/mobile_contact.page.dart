@@ -3,13 +3,10 @@ import 'dart:developer';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_sms/flutter_sms.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_app.button.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_app.styles.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_app_text.outline.dart';
-import 'package:portfolio/view/widgets/app.styles.dart';
-import 'package:portfolio/view/widgets/app.text.outline.dart';
 import 'package:sizer/sizer.dart';
 import 'package:toast/toast.dart';
 

@@ -51,14 +51,14 @@ class AppTextOutline extends StatelessWidget {
               borderSide: const BorderSide(color: Color(0xffF15252)),
             ),
             enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(8),
                 borderSide: const BorderSide(color: Colors.white, width: 1)),
             focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(8),
                 borderSide:
                     const BorderSide(color: Color(0xff136a8a), width: 1)),
             border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(8),
                 borderSide:
                     const BorderSide(color: Color(0xffD2D2D4), width: 1)),
             contentPadding: EdgeInsets.fromLTRB(2.h, 0.sp, 0.sp, 0.sp),

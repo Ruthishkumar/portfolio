@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_sms/flutter_sms.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/view/widgets/app.button.dart';
-import 'package:portfolio/view/widgets/app.styles.dart';
-import 'package:portfolio/view/widgets/app.text.outline.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.button.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.styles.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.text.outline.dart';
 import 'package:sizer/sizer.dart';
 import 'package:toast/toast.dart';
 
@@ -98,6 +98,7 @@ class _ContactPageState extends State<ContactPage> {
                   height: 37.h,
                   child: TextFormField(
                     maxLines: 10,
+                    textInputAction: TextInputAction.done,
                     controller: messageController,
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(200),
@@ -109,11 +110,11 @@ class _ContactPageState extends State<ContactPage> {
                     decoration: InputDecoration(
                       hintText: 'Message',
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(8),
                           borderSide:
                               const BorderSide(color: Colors.white, width: 1)),
                       focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(8),
                           borderSide: const BorderSide(
                               color: Color(0xff136a8a), width: 1)),
                       hintStyle: GoogleFonts.openSans(
@@ -121,7 +122,7 @@ class _ContactPageState extends State<ContactPage> {
                           fontWeight: FontWeight.w400,
                           color: const Color(0xff78787D)),
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(8),
                           borderSide: const BorderSide(
                               color: Color(0xffD2D2D4), width: 1)),
                     ),

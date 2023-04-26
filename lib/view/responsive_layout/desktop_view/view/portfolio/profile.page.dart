@@ -2,9 +2,10 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:portfolio/view/widgets/app.button.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.button.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.styles.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/hover.animation.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:portfolio/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -15,6 +16,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  bool isHovered = false;
   @override
   Widget build(BuildContext context) {
     var socialProfileList = [
@@ -22,89 +24,98 @@ class _ProfilePageState extends State<ProfilePage> {
       {'image': 'assets/images/linked_in_icon.png', 'id': 1},
       {'image': 'assets/images/git_hub_icon.png', 'id': 2},
     ];
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                DelayedDisplay(
-                  slidingBeginOffset: const Offset(-1, 0),
-                  delay: const Duration(milliseconds: 1),
-                  child: Text(
-                    'Hello, It\'s me',
-                    style: AppStyles.instance.homeHeader,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  DelayedDisplay(
+                    slidingBeginOffset: const Offset(-1, 0),
+                    delay: const Duration(milliseconds: 1),
+                    child: Text(
+                      'Hello, It\'s me',
+                      style: AppStyles.instance.homeHeader,
+                    ),
                   ),
-                ),
-                SizedBox(height: 1.h),
-                DelayedDisplay(
-                  slidingBeginOffset: const Offset(-1, 0),
-                  delay: const Duration(milliseconds: 2),
-                  child: Text('Ruthish Kumar Hari',
-                      style: AppStyles.instance.nameHeader),
-                ),
-                SizedBox(height: 1.h),
-                DelayedDisplay(
-                  slidingBeginOffset: const Offset(0, 1),
-                  delay: const Duration(milliseconds: 2),
-                  child: Row(
+                  SizedBox(height: 1.h),
+                  DelayedDisplay(
+                    slidingBeginOffset: const Offset(-1, 0),
+                    delay: const Duration(milliseconds: 2),
+                    child: Text('Ruthish Kumar Hari',
+                        style: AppStyles.instance.nameHeader),
+                  ),
+                  SizedBox(height: 1.h),
+                  DelayedDisplay(
+                    slidingBeginOffset: const Offset(0, 1),
+                    delay: const Duration(milliseconds: 2),
+                    child: Row(
+                      children: [
+                        Text('And I\'m a',
+                            style: AppStyles.instance.homeHeader),
+                        SizedBox(width: 1.w),
+                        DefaultTextStyle(
+                          style: AppStyles.instance.designationTitle,
+                          child: AnimatedTextKit(
+                            repeatForever: true,
+                            animatedTexts: [
+                              TyperAnimatedText('Mobile Developer'),
+                              TyperAnimatedText('Flutter Developer'),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 3.h),
+                  DelayedDisplay(
+                    slidingBeginOffset: const Offset(-1, 0),
+                    delay: const Duration(milliseconds: 4),
+                    child: Text(
+                      'A passionate Full Stack Software Developer\nhaving an experience of building Mobile and \nWeb applications with Flutter/Dart/NodeJs\nand some other cool libraries and\nframeworks',
+                      style: AppStyles.instance.homeHeader,
+                    ),
+                  ),
+                  SizedBox(height: 3.h),
+                  Row(
                     children: [
-                      Text('And I\'m a', style: AppStyles.instance.homeHeader),
-                      SizedBox(width: 1.w),
-                      DefaultTextStyle(
-                        style: AppStyles.instance.designationTitle,
-                        child: AnimatedTextKit(
-                          repeatForever: true,
-                          animatedTexts: [
-                            TyperAnimatedText('Mobile Developer'),
-                            TyperAnimatedText('Flutter Developer'),
-                          ],
-                        ),
+                      Wrap(
+                        spacing: 1.w,
+                        runSpacing: 1.w,
+                        children: [
+                          for (int i = 0; i < socialProfileList.length; i++)
+                            _socialProfile(socialProfileList[i])
+                        ],
                       )
                     ],
                   ),
-                ),
-                SizedBox(height: 3.h),
-                DelayedDisplay(
-                  slidingBeginOffset: const Offset(-1, 0),
-                  delay: const Duration(milliseconds: 4),
-                  child: Text(
-                    'A passionate Full Stack Software Developer\nhaving an experience of building Mobile and \nWeb applications with Flutter/Dart/NodeJs\nand some other cool libraries and\nframeworks',
-                    style: AppStyles.instance.homeHeader,
-                  ),
-                ),
-                SizedBox(height: 3.h),
-                Row(
-                  children: [
-                    Wrap(
-                      spacing: 1.w,
-                      runSpacing: 1.w,
-                      children: [
-                        for (int i = 0; i < socialProfileList.length; i++)
-                          _socialProfile(socialProfileList[i])
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(height: 4.h),
-                AppButton(
-                    onPressed: () {}, label: 'See my resume'.toUpperCase()),
-              ],
-            ),
-            DelayedDisplay(
-              slidingBeginOffset: const Offset(1, 0),
-              delay: const Duration(milliseconds: 2),
-              child: Lottie.asset(
-                'assets/lottie/hello.json',
-                height: 55.h,
+                  SizedBox(height: 4.h),
+                  HoverAnimation(
+                    height: 50,
+                    width: 200,
+                    thickness: 1,
+                    milliSeconds: 500,
+                    curve: Curves.easeInOutSine,
+                    label: 'See My Resume'.toUpperCase(),
+                  )
+                ],
               ),
-            )
-          ],
-        )
-      ],
+              DelayedDisplay(
+                slidingBeginOffset: const Offset(1, 0),
+                delay: const Duration(milliseconds: 2),
+                child: Lottie.asset(
+                  'assets/lottie/hello.json',
+                  height: 55.h,
+                ),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 

@@ -1,5 +1,6 @@
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/view/widgets/app.styles.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.styles.dart';
 import 'package:sizer/sizer.dart';
 
 class ProjectPage extends StatefulWidget {
@@ -58,20 +59,24 @@ class _ProjectPageState extends State<ProjectPage> {
     ];
     return Column(
       children: [
-        Row(
-          children: [
-            Expanded(
-              child: Wrap(
-                alignment: WrapAlignment.center,
-                spacing: 6.sp,
-                runSpacing: 6.sp,
-                children: [
-                  for (int i = 0; i < projectDetails.length; i++)
-                    _projectBrief(projectDetails[i])
-                ],
-              ),
-            )
-          ],
+        DelayedDisplay(
+          slidingBeginOffset: const Offset(0, 1),
+          delay: const Duration(milliseconds: 2),
+          child: Row(
+            children: [
+              Expanded(
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 6.sp,
+                  runSpacing: 6.sp,
+                  children: [
+                    for (int i = 0; i < projectDetails.length; i++)
+                      _projectBrief(projectDetails[i])
+                  ],
+                ),
+              )
+            ],
+          ),
         )
       ],
     );

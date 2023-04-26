@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/view/widgets/app.styles.dart';
-import 'package:portfolio/view/widgets/experience.container.card.dart';
+import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/experience.container.card.dart';
 import 'package:sizer/sizer.dart';
 
 class WorkExperience extends StatefulWidget {
@@ -16,9 +15,9 @@ class _WorkExperienceState extends State<WorkExperience> {
     return Container(
       padding: EdgeInsets.only(top: 5.h),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const ExperienceContainerCard(
                 companyHeaderOne: 'Deepsense Digital Solutions',
