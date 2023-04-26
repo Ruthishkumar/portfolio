@@ -84,6 +84,30 @@ class MobileAppStyles {
   final TextStyle? educationHeader = GoogleFonts.poppins(
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w300,
+      fontSize: 25.sp,
+      color: Colors.white);
+
+  final TextStyle? collegeName = GoogleFonts.poppins(
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w300,
+      fontSize: 18.sp,
+      color: Colors.white);
+
+  final TextStyle? projectHeader = GoogleFonts.poppins(
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w500,
       fontSize: 15.sp,
       color: Colors.white);
+
+  final TextStyle? projectDescription = GoogleFonts.poppins(
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.w300,
+      fontSize: 14.sp,
+      color: Colors.white);
+
+  final TextStyle? contactMeColor = GoogleFonts.heebo(
+      fontWeight: FontWeight.w500,
+      fontSize: 20.sp,
+      fontStyle: FontStyle.normal,
+      color: const Color(0xff136a8a));
 }

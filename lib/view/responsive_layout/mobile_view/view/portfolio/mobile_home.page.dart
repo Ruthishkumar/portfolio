@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/view/portfolio/mobile_contact.page.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/view/portfolio/mobile_experience.page.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/view/portfolio/mobile_profile.page.dart';
@@ -10,8 +9,6 @@ import 'package:portfolio/view/responsive_layout/mobile_view/view/portfolio/mobi
 import 'package:portfolio/view/responsive_layout/mobile_view/view/portfolio/mobile_skills.page.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_app.styles.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../../../widgets/app.styles.dart';
 
 class MobileHomepage extends StatefulWidget {
   const MobileHomepage({Key? key}) : super(key: key);
@@ -23,7 +20,7 @@ class MobileHomepage extends StatefulWidget {
 class _MobileHomepageState extends State<MobileHomepage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  int selectedValue = 0;
+  int selectedValue = 3;
 
   int selectedIndex = 0;
 
@@ -123,7 +120,7 @@ class _MobileHomepageState extends State<MobileHomepage> {
   /// body widget
   _bodyWidget() {
     if (selectedIndex == 0) {
-      return const MobileProfilePage();
+      return const MobileContactPage();
     } else if (selectedIndex == 1) {
       return const MobileSkillsPage();
     } else if (selectedIndex == 2) {

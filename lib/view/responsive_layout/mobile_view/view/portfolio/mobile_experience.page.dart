@@ -10,6 +10,8 @@ class MobileExperiencePage extends StatefulWidget {
 class _MobileExperiencePageState extends State<MobileExperiencePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [],
+    );
   }
 }

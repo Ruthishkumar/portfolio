@@ -24,6 +24,7 @@ class _ContactPageState extends State<ContactPage> {
   final TextEditingController phoneNumberController = TextEditingController();
   final TextEditingController emailSubjectController = TextEditingController();
   final TextEditingController messageController = TextEditingController();
+  var focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +98,6 @@ class _ContactPageState extends State<ContactPage> {
                   height: 37.h,
                   child: TextFormField(
                     maxLines: 10,
-                    textInputAction: TextInputAction.done,
                     controller: messageController,
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(200),
@@ -143,7 +143,7 @@ class _ContactPageState extends State<ContactPage> {
     );
   }
 
-  /// validate controller
+  /// validate input field
   bool validate() {
     if (nameController.text == '') {
       showToast("Please enter your name", gravity: Toast.top);
@@ -167,15 +167,17 @@ class _ContactPageState extends State<ContactPage> {
 
   /// summit button
   getSummit() async {
-    log('SUCCESS');
-    await sendSMS(message: message, recipients: recipents, sendDirect: true)
-        .catchError((onError) {
-      print(onError);
-      print('Error Message');
-    });
+    if (validate()) {
+      log('SUCCESS');
+      await sendSMS(message: message, recipients: recipents, sendDirect: true)
+          .catchError((onError) {
+        print(onError);
+        print('Error Message');
+      });
+    }
   }
 
-  /// show toast widget
+  /// show toast function
   void showToast(String msg, {int? duration, int? gravity}) {
     Toast.show(msg,
         duration: duration,

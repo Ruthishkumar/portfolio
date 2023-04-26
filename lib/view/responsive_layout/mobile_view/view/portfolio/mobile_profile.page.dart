@@ -72,41 +72,10 @@ class _MobileProfilePageState extends State<MobileProfilePage> {
             MobileAppButton(
                 onPressed: () {}, label: 'See my resume'.toUpperCase()),
             SizedBox(height: 5.h),
-            // Lottie.asset(
-            //   'assets/lottie/hello.json',
-            //   height: 55.h,
-            // ),
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('Education',
-                  style: MobileAppStyles.instance.educationHeader),
-              SizedBox(height: 4.sp),
-              Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Image.asset(
-                  'assets/images/college_logo.png',
-                  height: 12.h,
-                ),
-                SizedBox(width: 3.w),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'SRM Valliammai Engineering College',
-                      style: AppStyles.instance.collegeName,
-                    ),
-                    SizedBox(height: 3.sp),
-                    Text(
-                      'BE - Electrical and Electronics Engineering',
-                      style: AppStyles.instance.skillsSubHeader,
-                    ),
-                    SizedBox(height: 3.sp),
-                    Text(
-                      'August 2016 - November 2020',
-                      style: AppStyles.instance.skillsSubHeader,
-                    ),
-                  ],
-                )
-              ])
-            ])
+            Lottie.asset(
+              'assets/lottie/hello.json',
+              height: 55.h,
+            ),
           ],
         ),
       ),

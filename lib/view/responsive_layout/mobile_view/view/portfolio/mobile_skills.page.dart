@@ -76,7 +76,7 @@ class _MobileSkillsPageState extends State<MobileSkillsPage> {
           ),
           SizedBox(height: 5.h),
           Lottie.asset(
-            'assets/lottie/hello.json',
+            'assets/lottie/skills.json',
             height: 55.h,
           ),
           SizedBox(height: 4.h),
@@ -155,27 +155,29 @@ class _MobileSkillsPageState extends State<MobileSkillsPage> {
       Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Image.asset(
           'assets/images/college_logo.png',
-          height: 12.h,
+          height: 15.h,
         ),
         SizedBox(width: 3.w),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'SRM Valliammai Engineering College',
-              style: AppStyles.instance.collegeName,
-            ),
-            SizedBox(height: 3.sp),
-            Text(
-              'BE - Electrical and Electronics Engineering',
-              style: AppStyles.instance.skillsSubHeader,
-            ),
-            SizedBox(height: 3.sp),
-            Text(
-              'August 2016 - November 2020',
-              style: AppStyles.instance.skillsSubHeader,
-            ),
-          ],
+        Flexible(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'SRM Valliammai Engineering College',
+                style: MobileAppStyles.instance.collegeName,
+              ),
+              SizedBox(height: 3.sp),
+              Text(
+                'BE - Electrical and Electronics Engineering',
+                style: MobileAppStyles.instance.skillsSubHeader,
+              ),
+              SizedBox(height: 3.sp),
+              Text(
+                'August 2016 - November 2020',
+                style: MobileAppStyles.instance.skillsSubHeader,
+              ),
+            ],
+          ),
         )
       ])
     ]);
