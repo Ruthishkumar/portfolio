@@ -69,7 +69,7 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
 
   int selectedValue = 0;
 
-  int selectedIndex = 3;
+  int selectedIndex = 0;
 
   /// app bar widget
   _appBar(options) {

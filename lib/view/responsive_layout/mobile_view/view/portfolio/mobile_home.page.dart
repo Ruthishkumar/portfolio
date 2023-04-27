@@ -76,6 +76,7 @@ class _MobileHomepageState extends State<MobileHomepage> {
                             onTap: () {
                               setState(() {
                                 selectedIndex = newData[index]['id'];
+                                Navigator.of(context).pop();
                               });
                             },
                             child: Text(newData[index]['profileHeader'],

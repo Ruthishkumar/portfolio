@@ -100,6 +100,8 @@ class _ContactPageState extends State<ContactPage> {
                     maxLines: 10,
                     textInputAction: TextInputAction.done,
                     controller: messageController,
+                    cursorHeight: 25,
+                    cursorRadius: const Radius.circular(10),
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(200),
                     ],

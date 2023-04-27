@@ -24,8 +24,8 @@ class AppTextOutline extends StatelessWidget {
     return TextFormField(
         textInputAction: textInputAction,
         controller: inputController,
-        cursorRadius: Radius.circular(10.h),
-        cursorHeight: 4.h,
+        cursorHeight: 25,
+        cursorRadius: const Radius.circular(10),
         style: GoogleFonts.openSans(
             fontSize: 4.sp, fontWeight: FontWeight.w400, color: Colors.white),
         keyboardType: (isNumber ?? false)

@@ -83,8 +83,10 @@ class _MobileContactPageState extends State<MobileContactPage> {
                 height: 18.h,
                 child: TextFormField(
                   maxLines: 10,
-                  keyboardType: TextInputType.multiline,
+                  textInputAction: TextInputAction.done,
                   controller: messageController,
+                  cursorHeight: 25,
+                  cursorRadius: const Radius.circular(10),
                   inputFormatters: [
                     LengthLimitingTextInputFormatter(200),
                   ],
