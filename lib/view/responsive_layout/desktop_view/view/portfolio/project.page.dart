@@ -109,7 +109,7 @@ class _ProjectPageState extends State<ProjectPage> {
             boxShadow: [
               BoxShadow(
                   color: selectedValue == options['id']
-                      ? Colors.white
+                      ? Colors.white.withOpacity(0.6)
                       : Colors.transparent,
                   offset: const Offset(0, 0),
                   spreadRadius: selectedValue == options['id'] ? 3 : 0,

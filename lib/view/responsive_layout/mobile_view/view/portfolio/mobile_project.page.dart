@@ -1,3 +1,4 @@
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_app.styles.dart';
 import 'package:sizer/sizer.dart';
@@ -73,64 +74,68 @@ class _MobileProjectPageState extends State<MobileProjectPage> {
 
   /// for loop for project brief
   _projectBrief(options) {
-    return Column(
-      children: [
-        MouseRegion(
-          cursor: SystemMouseCursors.click,
-          onEnter: (details) {
-            setState(() {
-              selectedValue = options['id'];
-            });
-          },
-          onExit: (details) {
-            setState(() {
-              selectedValue = -1;
-            });
-          },
-          child: Container(
-            width: 80.w,
-            padding: EdgeInsets.fromLTRB(2.h, 2.h, 2.h, 2.h),
-            decoration: BoxDecoration(
-                color: selectedValue == options['id']
-                    ? const Color(0xff136a8a)
-                    : Colors.black12,
-                borderRadius: BorderRadius.all(Radius.circular(2.h)),
-                boxShadow: [
-                  BoxShadow(
-                      color: selectedValue == options['id']
-                          ? Colors.white
-                          : Colors.transparent,
-                      offset: const Offset(0, 0),
-                      spreadRadius: selectedValue == options['id'] ? 3 : 0,
-                      blurRadius: selectedValue == options['id'] ? 3 : 0)
-                ]),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Icon(Icons.tag_outlined, size: 3.h, color: Colors.white),
-                    SizedBox(width: 1.w),
-                    Text(options['projectTitle'],
-                        style: MobileAppStyles.instance.projectHeader)
-                  ],
-                ),
-                SizedBox(height: 2.h),
-                Text(
-                  options['projectDescription'],
-                  style: MobileAppStyles.instance.projectDescription,
-                ),
-                SizedBox(height: 2.h),
-                Text(
-                  options['techUsed'],
-                  style: MobileAppStyles.instance.projectDescription,
-                ),
-              ],
+    return DelayedDisplay(
+      slidingBeginOffset: const Offset(0, 1),
+      delay: const Duration(milliseconds: 2),
+      child: Column(
+        children: [
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            onEnter: (details) {
+              setState(() {
+                selectedValue = options['id'];
+              });
+            },
+            onExit: (details) {
+              setState(() {
+                selectedValue = -1;
+              });
+            },
+            child: Container(
+              width: 80.w,
+              padding: EdgeInsets.fromLTRB(2.h, 2.h, 2.h, 2.h),
+              decoration: BoxDecoration(
+                  color: selectedValue == options['id']
+                      ? const Color(0xff136a8a)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.all(Radius.circular(2.h)),
+                  boxShadow: [
+                    BoxShadow(
+                        color: selectedValue == options['id']
+                            ? Colors.white.withOpacity(0.6)
+                            : Colors.transparent,
+                        offset: const Offset(0, 0),
+                        spreadRadius: selectedValue == options['id'] ? 3 : 0,
+                        blurRadius: selectedValue == options['id'] ? 3 : 0)
+                  ]),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.tag_outlined, size: 3.h, color: Colors.white),
+                      SizedBox(width: 1.w),
+                      Text(options['projectTitle'],
+                          style: MobileAppStyles.instance.projectHeader)
+                    ],
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    options['projectDescription'],
+                    style: MobileAppStyles.instance.projectDescription,
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    options['techUsed'],
+                    style: MobileAppStyles.instance.projectDescription,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-        SizedBox(height: 5.h),
-      ],
+          SizedBox(height: 5.h),
+        ],
+      ),
     );
   }
 }

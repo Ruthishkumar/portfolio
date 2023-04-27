@@ -1,8 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_app.button.dart';
 import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_app.styles.dart';
+import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_hover_animation.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -51,7 +51,7 @@ class _MobileProfilePageState extends State<MobileProfilePage> {
             Text(
               'A passionate Full Stack Software Developer having an experience of building Mobile and Web applications with Flutter/Dart/NodeJs and some other cool libraries and\nframeworks',
               style: MobileAppStyles.instance.homeHeader,
-              textAlign: TextAlign.justify,
+              textAlign: TextAlign.start,
             ),
             SizedBox(height: 2.h),
             Row(
@@ -68,8 +68,14 @@ class _MobileProfilePageState extends State<MobileProfilePage> {
               ],
             ),
             SizedBox(height: 4.h),
-            MobileAppButton(
-                onPressed: () {}, label: 'See my resume'.toUpperCase()),
+            MobileHoverAnimation(
+              height: 50,
+              width: 200,
+              thickness: 1,
+              milliSeconds: 500,
+              curve: Curves.easeInOutSine,
+              label: 'See My Resume'.toUpperCase(),
+            ),
             SizedBox(height: 5.h),
             Lottie.asset(
               'assets/lottie/hello.json',

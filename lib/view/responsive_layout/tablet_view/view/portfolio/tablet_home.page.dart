@@ -11,7 +11,7 @@ class _TabletHomePageState extends State<TabletHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: const Color(0xff1E1E26),
       body: Column(
         children: [],
       ),

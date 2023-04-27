@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.styles.dart';
+import 'package:portfolio/view/responsive_layout/mobile_view/widgets/mobile_app.styles.dart';
 
-class HoverAnimation extends StatefulWidget {
+class MobileHoverAnimation extends StatefulWidget {
   final double? height;
   final double? width;
   final Curve? curve;
@@ -9,7 +10,7 @@ class HoverAnimation extends StatefulWidget {
   final String? label;
   final int? milliSeconds;
 
-  const HoverAnimation(
+  const MobileHoverAnimation(
       {Key? key,
       this.height,
       this.width,
@@ -20,10 +21,10 @@ class HoverAnimation extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<HoverAnimation> createState() => _HoverAnimationState();
+  State<MobileHoverAnimation> createState() => _MobileHoverAnimationState();
 }
 
-class _HoverAnimationState extends State<HoverAnimation> {
+class _MobileHoverAnimationState extends State<MobileHoverAnimation> {
   bool animate = false;
   @override
   Widget build(BuildContext context) {
@@ -107,7 +108,7 @@ class _HoverAnimationState extends State<HoverAnimation> {
                 width: widget.width!,
                 child: Center(
                   child: Text(widget.label!,
-                      style: AppStyles.instance.appDefaultHeader),
+                      style: MobileAppStyles.instance.appDefaultHeader),
                 ))
           ],
         ),

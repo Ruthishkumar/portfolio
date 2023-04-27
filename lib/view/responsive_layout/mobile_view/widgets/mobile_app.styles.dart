@@ -51,6 +51,12 @@ class MobileAppStyles {
       fontStyle: FontStyle.normal,
       color: Colors.white);
 
+  final TextStyle? appDesignationHeader = GoogleFonts.aBeeZee(
+      fontWeight: FontWeight.w500,
+      fontSize: 13.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.white);
+
   final TextStyle? skillSHeader = GoogleFonts.heebo(
       fontWeight: FontWeight.w300,
       fontSize: 28.sp,
@@ -110,4 +116,16 @@ class MobileAppStyles {
       fontSize: 20.sp,
       fontStyle: FontStyle.normal,
       color: const Color(0xff136a8a));
+
+  final TextStyle? companyName = GoogleFonts.aBeeZee(
+      fontWeight: FontWeight.w500,
+      fontSize: 14.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.white);
+
+  final TextStyle? companyLocation = GoogleFonts.aBeeZee(
+      fontWeight: FontWeight.w500,
+      fontSize: 13.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.white);
 }

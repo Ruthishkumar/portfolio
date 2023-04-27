@@ -14,6 +14,18 @@ class AppStyles {
       fontStyle: FontStyle.normal,
       color: Colors.white);
 
+  final TextStyle? companyName = GoogleFonts.aBeeZee(
+      fontWeight: FontWeight.w500,
+      fontSize: 5.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.white);
+
+  final TextStyle? companyLocation = GoogleFonts.aBeeZee(
+      fontWeight: FontWeight.w500,
+      fontSize: 4.sp,
+      fontStyle: FontStyle.normal,
+      color: Colors.white);
+
   final TextStyle? appHoverHeader = GoogleFonts.aBeeZee(
       fontWeight: FontWeight.w500,
       fontSize: 4.sp,
