@@ -62,7 +62,7 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
             )
           ]),
       body: Container(
-          padding: EdgeInsets.fromLTRB(20.h, 5.h, 20.h, 5.h),
+          padding: EdgeInsets.fromLTRB(20.h, 5.h, 20.h, 20),
           child: _bodyWidget()),
     );
   }

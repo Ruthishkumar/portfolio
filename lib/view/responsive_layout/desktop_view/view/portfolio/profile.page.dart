@@ -2,11 +2,11 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.button.dart';
 import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.styles.dart';
 import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/hover.animation.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:sizer/sizer.dart';
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -25,6 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
       {'image': 'assets/images/git_hub_icon.png', 'id': 2},
     ];
     return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -94,14 +95,31 @@ class _ProfilePageState extends State<ProfilePage> {
                     ],
                   ),
                   SizedBox(height: 4.h),
-                  HoverAnimation(
-                    height: 50,
-                    width: 200,
-                    thickness: 1,
-                    milliSeconds: 500,
-                    curve: Curves.easeInOutSine,
-                    label: 'See My Resume'.toUpperCase(),
-                  )
+                  Link(
+                    uri: Uri.parse(
+                        "https://drive.google.com/file/d/14ODOwAYhmTi_DBBiyUV5lfM2oBEOfvv9/view?usp=sharing"),
+                    builder: (context, function) {
+                      return GestureDetector(
+                        onTap: () async {
+                          var url =
+                              "https://drive.google.com/file/d/14ODOwAYhmTi_DBBiyUV5lfM2oBEOfvv9/view?usp=sharing";
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        child: HoverAnimation(
+                          height: 50,
+                          width: 200,
+                          thickness: 1,
+                          milliSeconds: 500,
+                          curve: Curves.easeInOutSine,
+                          label: 'See My Resume'.toUpperCase(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
               DelayedDisplay(
