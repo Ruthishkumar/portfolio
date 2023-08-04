@@ -6,7 +6,7 @@ import 'package:portfolio/view/responsive_layout/tablet_view/view/portfolio/tabl
 import 'package:sizer/sizer.dart';
 import 'package:toast/toast.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 

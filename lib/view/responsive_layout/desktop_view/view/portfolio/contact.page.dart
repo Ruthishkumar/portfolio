@@ -1,9 +1,9 @@
 import 'dart:developer';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_sms/flutter_sms.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.button.dart';
 import 'package:portfolio/view/responsive_layout/desktop_view/view/widgets/app.styles.dart';
@@ -171,11 +171,14 @@ class _ContactPageState extends State<ContactPage> {
   /// summit button
   getSummit() async {
     if (validate()) {
-      log('SUCCESS');
-      await sendSMS(message: message, recipients: recipents, sendDirect: true)
-          .catchError((onError) {
-        print(onError);
-        print('Error Message');
+      final collection = FirebaseFirestore.instance.collection('contactus');
+      await collection.doc().set({
+        "name": nameController.text,
+        "mobileNumber": phoneNumberController.text,
+        "email": mailController.text,
+        "Mail Subject": emailSubjectController.text,
+        "message": messageController.text,
+        "timestamp": FieldValue.serverTimestamp()
       });
     }
   }
